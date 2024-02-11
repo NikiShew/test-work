@@ -1,0 +1,147 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/* Если я правильно понял , нужно сделать что-то по типу мессенджера */
+
+main {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: rgba(137, 43, 226, 0.875);
+	height: 100dvh;
+}
+content {
+	padding: 3% 15px;
+	flex-grow: 1;
+	background-color: rgba(137, 43, 226, 0.875);
+	border-left: 3px solid purple;
+	border-right: 3px solid purple;
+}
+
+/*Block styles*/
+
+header {
+	background-color: rgba(0, 128, 0, 0.882);
+	border-radius: 5px;
+	border: 5px solid green;
+
+	position: relative;
+}
+
+.block {
+	min-height: 5%;
+	padding: 10px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.input-block {
+	background-color: rgba(138, 29, 29, 0.826);
+	border: 5px solid rgb(138, 29, 29);
+	border-radius: 5px;
+}
+
+/*Content styles*/
+
+.inner {
+	padding: 10px 4%;
+	display: flex;
+	flex-direction: column;
+}
+
+.massage {
+	overflow: auto;
+	padding: 20px;
+	background: rgb(214, 155, 19);
+	border: 2px solid orange;
+	height: 70px;
+	margin-bottom: 20px;
+	max-width: 80%;
+}
+
+.massage::-webkit-scrollbar {
+	width: 0;
+}
+
+/*Если человек отправляет сообщения то оно становится вправо*/
+.you {
+	align-self: flex-end;
+}
+/*Если человек получает сообщения то оно становится влево*/
+.friend {
+	align-self: flex-start;
+}
+/* sidebar */
+
+.sidebar-btn {
+	position: absolute;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.646);
+	left: 10px;
+	font-size: 30px;
+	height: 30px;
+	width: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border-radius: 50px;
+	border: none;
+	z-index: 6;
+	transition: 0.3s all ease-in;
+}
+
+.sidebar-btn:hover {
+	color: white;
+}
+
+.btn-active {
+	transform: rotate(45deg);
+}
+
+.sidebar {
+	/* display: none; */
+	overflow: auto;
+	padding: 20px;
+	transition: 0.3s all ease;
+	width: 30%;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	color: rgba(47, 45, 45, 0.501);
+	background-color: rgb(156, 168, 178);
+}
+.active {
+	display: flex;
+	transition: 0.3 all ease-in;
+	transform: translateX(0);
+}
+.container {
+	overflow: hidden;
+	display: flex;
+	transition: 0.5 all ease-in;
+	z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+	.sidebar {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 3;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.sidebar {
+		width: 40%;
+	}
+}

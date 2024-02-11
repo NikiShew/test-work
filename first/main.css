@@ -1,0 +1,76 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/* Если я правильно понял , нужно сделать что-то по типу мессенджера */
+
+main {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: rgba(137, 43, 226, 0.875);
+	height: 100dvh;
+}
+content {
+	padding: 3% 15px;
+	flex-grow: 1;
+	background-color: rgba(137, 43, 226, 0.875);
+	border-left: 3px solid purple;
+	border-right: 3px solid purple;
+}
+
+/*Block styles*/
+
+header {
+	background-color: rgba(0, 128, 0, 0.882);
+	border-radius: 5px;
+	border: 5px solid green;
+}
+
+.block {
+	min-height: 5%;
+	padding: 10px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.input-block {
+	background-color: rgba(138, 29, 29, 0.826);
+	border: 5px solid rgb(138, 29, 29);
+	border-radius: 5px;
+}
+
+/*Content styles*/
+
+.inner {
+	padding: 10px 4%;
+	display: flex;
+	flex-direction: column;
+}
+
+.massage {
+	overflow: auto;
+	padding: 20px;
+	background: rgb(214, 155, 19);
+	border: 2px solid orange;
+	height: 70px;
+	margin-bottom: 20px;
+	max-width: 80%;
+}
+
+.massage::-webkit-scrollbar {
+	width: 0;
+}
+
+/*Если человек отправляет сообщения то оно становится вправо*/
+.you {
+	align-self: flex-end;
+}
+/*Если человек получает сообщения то оно становится влево*/
+.friend {
+	align-self: flex-start;
+}
